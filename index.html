@@ -223,9 +223,8 @@
   <p><strong>Each demo is a real IIIF service, not a picture of one.</strong> The
   <code>info.json</code> below every demo is a live endpoint: paste it into Mirador, the Universal
   Viewer, or any other IIIF client and the image opens there, with no knowledge of OME-Zarr on the
-  client's part. The three demos with more than one plane carry a IIIF Presentation manifest and
-  open directly in <a href="https://projectmirador.org/">Mirador</a> from their card; the whole
-  brain is a single image, so it has an image service but no manifest to open.</p>
+  client's part. Every demo also carries a IIIF Presentation manifest, so each one opens directly
+  in <a href="https://projectmirador.org/">Mirador</a> from its card.</p>
   <p>Each demo also links to the <strong>original OME-Zarr store in vizarr</strong>, so you can
   compare what a IIIF client sees against the chunked array the data actually lives in.</p>
 </div>
@@ -272,6 +271,7 @@
     <div class="actions">
       <a class="btn primary" href="./whole-brain/">Open demo</a>
       <a class="btn" href="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0048A/9846152.zarr">Open source in vizarr</a>
+      <a class="btn" href="https://projectmirador.org/embed/?iiif-content=https://nishad.github.io/ziv-demos/whole-brain/manifest.json">Open in Mirador</a>
       <a class="btn" href="https://idr.openmicroscopy.org/webclient/?show=image-9846152">IDR page</a>
     </div>
     <p class="iiif">

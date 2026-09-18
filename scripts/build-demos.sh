@@ -19,7 +19,7 @@ set -euo pipefail
 
 BASE_URL="${BASE_URL:-https://nishad.github.io/ziv-demos}"
 IDR="https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4"
-ZIV="${ZIV:-$(cd "$(dirname "$0")/../../zarr-lab" && pwd)/target/release/ziv}"
+ZIV="${ZIV:-$(cd "$(dirname "$0")/../../ziv" && pwd)/target/release/ziv}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 FILTER="${1:-}"
 
