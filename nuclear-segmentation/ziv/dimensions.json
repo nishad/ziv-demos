@@ -1,0 +1,36 @@
+{
+  "sizeT": 1,
+  "sizeZ": 236,
+  "sizeC": 2,
+  "defaultT": 0,
+  "defaultZ": 118,
+  "channels": [
+    {
+      "index": 0,
+      "label": "LaminB1",
+      "color": "0000FF",
+      "window": {
+        "start": 0.0,
+        "end": 1500.0
+      },
+      "active": true
+    },
+    {
+      "index": 1,
+      "label": "Dapi",
+      "color": "FFFF00",
+      "window": {
+        "start": 0.0,
+        "end": 1500.0
+      },
+      "active": true
+    }
+  ],
+  "labels": [
+    {
+      "name": "0",
+      "declaredColors": 61
+    }
+  ],
+  "labelOpenFailures": []
+}

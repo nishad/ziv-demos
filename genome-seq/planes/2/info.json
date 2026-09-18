@@ -1,0 +1,38 @@
+{
+  "@context": "http://iiif.io/api/image/3/context.json",
+  "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/2",
+  "type": "ImageService3",
+  "protocol": "http://iiif.io/api/image",
+  "profile": "level0",
+  "width": 198,
+  "height": 223,
+  "tiles": [
+    {
+      "width": 512,
+      "scaleFactors": [
+        1,
+        2,
+        4
+      ]
+    }
+  ],
+  "sizes": [
+    {
+      "width": 198,
+      "height": 223
+    },
+    {
+      "width": 99,
+      "height": 111
+    },
+    {
+      "width": 49,
+      "height": 55
+    }
+  ],
+  "extraFeatures": [
+    "sizeByWh"
+  ],
+  "maxWidth": 198,
+  "maxHeight": 223
+}

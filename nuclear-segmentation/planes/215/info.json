@@ -1,0 +1,38 @@
+{
+  "@context": "http://iiif.io/api/image/3/context.json",
+  "id": "https://nishad.github.io/ziv-demos/nuclear-segmentation/planes/215",
+  "type": "ImageService3",
+  "protocol": "http://iiif.io/api/image",
+  "profile": "level0",
+  "width": 271,
+  "height": 275,
+  "tiles": [
+    {
+      "width": 512,
+      "scaleFactors": [
+        1,
+        2,
+        4
+      ]
+    }
+  ],
+  "sizes": [
+    {
+      "width": 271,
+      "height": 275
+    },
+    {
+      "width": 135,
+      "height": 137
+    },
+    {
+      "width": 67,
+      "height": 68
+    }
+  ],
+  "extraFeatures": [
+    "sizeByWh"
+  ],
+  "maxWidth": 271,
+  "maxHeight": 275
+}

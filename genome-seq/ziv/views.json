@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "defaultZ": 6,
+  "planes": {
+    "0": "planes/0",
+    "1": "planes/1",
+    "2": "planes/2",
+    "3": "planes/3",
+    "4": "planes/4",
+    "5": "planes/5",
+    "6": ".",
+    "7": "planes/7",
+    "8": "planes/8",
+    "9": "planes/9",
+    "10": "planes/10",
+    "11": "planes/11"
+  },
+  "labels": [
+    {
+      "index": 0,
+      "name": "0",
+      "palette": "distinct",
+      "opacity": 0.6,
+      "planes": {
+        "0": "planes/0/labels/0",
+        "1": "planes/1/labels/0",
+        "2": "planes/2/labels/0",
+        "3": "planes/3/labels/0",
+        "4": "planes/4/labels/0",
+        "5": "planes/5/labels/0",
+        "6": "planes/6/labels/0",
+        "7": "planes/7/labels/0",
+        "8": "planes/8/labels/0",
+        "9": "planes/9/labels/0",
+        "10": "planes/10/labels/0",
+        "11": "planes/11/labels/0"
+      }
+    }
+  ]
+}

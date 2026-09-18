@@ -1,0 +1,38 @@
+{
+  "@context": "http://iiif.io/api/image/3/context.json",
+  "id": "https://nishad.github.io/ziv-demos/condensin-map/planes/20/labels/0",
+  "type": "ImageService3",
+  "protocol": "http://iiif.io/api/image",
+  "profile": "level0",
+  "width": 256,
+  "height": 256,
+  "tiles": [
+    {
+      "width": 512,
+      "scaleFactors": [
+        1,
+        2,
+        4
+      ]
+    }
+  ],
+  "sizes": [
+    {
+      "width": 256,
+      "height": 256
+    },
+    {
+      "width": 128,
+      "height": 128
+    },
+    {
+      "width": 64,
+      "height": 64
+    }
+  ],
+  "extraFeatures": [
+    "sizeByWh"
+  ],
+  "maxWidth": 256,
+  "maxHeight": 256
+}

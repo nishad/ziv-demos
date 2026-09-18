@@ -1,0 +1,828 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://nishad.github.io/ziv-demos/genome-seq/manifest.json",
+  "type": "Manifest",
+  "label": {
+    "none": [
+      "13457537"
+    ]
+  },
+  "items": [
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z0",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 0"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z0/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z0/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/0/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/0/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z1",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 1"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z1/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z1/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/1/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/1",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/1/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/1/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z2",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 2"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z2/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z2/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/2/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/2",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/2/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/2/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z3",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 3"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z3/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z3/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/3/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/3",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/3/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/3/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z4",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 4"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z4/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z4/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/4/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/4",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/4/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/4/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z5",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 5"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z5/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z5/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/5/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/5",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/5/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/5/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z6",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 6"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z6/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z6/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/6/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/6/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z7",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 7"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z7/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z7/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/7/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/7",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/7/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/7/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z8",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 8"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z8/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z8/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/8/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/8",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/8/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/8/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z9",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 9"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z9/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z9/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/9/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/9",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/9/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/9/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z10",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 10"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z10/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z10/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/10/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/10",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/10/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/10/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z11",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "z 11"
+        ]
+      },
+      "width": 198,
+      "height": 223,
+      "items": [
+        {
+          "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z11/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z11/painting",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "type": "Choice",
+                "items": [
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/11/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "intensity"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/11",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/11/labels/0/full/198,223/0/default.jpg",
+                    "type": "Image",
+                    "format": "image/jpeg",
+                    "width": 198,
+                    "height": 223,
+                    "label": {
+                      "none": [
+                        "0 overlay"
+                      ]
+                    },
+                    "service": [
+                      {
+                        "id": "https://nishad.github.io/ziv-demos/genome-seq/planes/11/labels/0",
+                        "type": "ImageService3",
+                        "profile": "level0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "target": "https://nishad.github.io/ziv-demos/genome-seq/canvas/z11"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

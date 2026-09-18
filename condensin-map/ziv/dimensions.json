@@ -1,0 +1,50 @@
+{
+  "sizeT": 40,
+  "sizeZ": 31,
+  "sizeC": 3,
+  "defaultT": 0,
+  "defaultZ": 15,
+  "channels": [
+    {
+      "index": 0,
+      "label": "NCAPD2",
+      "color": "00FF00",
+      "window": {
+        "start": 0.0,
+        "end": 23000.0
+      },
+      "active": true
+    },
+    {
+      "index": 1,
+      "label": "DNA",
+      "color": "0000FF",
+      "window": {
+        "start": 0.0,
+        "end": 20000.0
+      },
+      "active": true
+    },
+    {
+      "index": 2,
+      "label": "NEG_Dextran",
+      "color": "FFFFFF",
+      "window": {
+        "start": 4.0,
+        "end": 65535.0
+      },
+      "active": false
+    }
+  ],
+  "labels": [
+    {
+      "name": "Cell",
+      "declaredColors": 40
+    },
+    {
+      "name": "Chromosomes",
+      "declaredColors": 40
+    }
+  ],
+  "labelOpenFailures": []
+}

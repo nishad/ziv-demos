@@ -1,0 +1,64 @@
+{
+  "@context": "http://iiif.io/api/image/3/context.json",
+  "id": "https://nishad.github.io/ziv-demos/whole-brain",
+  "type": "ImageService3",
+  "protocol": "http://iiif.io/api/image",
+  "profile": "level0",
+  "width": 19120,
+  "height": 13350,
+  "tiles": [
+    {
+      "width": 512,
+      "scaleFactors": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        258
+      ]
+    }
+  ],
+  "sizes": [
+    {
+      "width": 9560,
+      "height": 6675
+    },
+    {
+      "width": 4780,
+      "height": 3337
+    },
+    {
+      "width": 2390,
+      "height": 1668
+    },
+    {
+      "width": 1195,
+      "height": 834
+    },
+    {
+      "width": 597,
+      "height": 417
+    },
+    {
+      "width": 298,
+      "height": 208
+    },
+    {
+      "width": 149,
+      "height": 104
+    },
+    {
+      "width": 74,
+      "height": 52
+    }
+  ],
+  "extraFeatures": [
+    "sizeByWh"
+  ],
+  "maxWidth": 9560,
+  "maxHeight": 6675
+}
