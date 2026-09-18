@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ziv demos</title>
+<meta name="description" content="Published OME-Zarr microscopy images served as IIIF Image API 3.0 services, exported as static tile trees by ziv.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  /* The accents are not decorative: #59FF97, #FE19FF and #4661C7 are three of the colours ziv
+     actually assigns to segmentation labels with its distinct palette, sampled from the rendered
+     nuclei in the idr0062 demo below. */
+  :root {
+    --ground: #fbfbfa;
+    --panel: #ffffff;
+    --edge: #e3e3df;
+    --ink: #17181c;
+    --ink-soft: #55575f;
+    --ink-faint: #8a8c94;
+    --accent: #0f7d52;
+    --accent-ink: #ffffff;
+    --label-a: #1f6f4a;
+    --label-b: #a3179f;
+    --label-c: #3550a8;
+    --radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0d0e11;
+      --panel: #15171c;
+      --edge: #262a33;
+      --ink: #eceef2;
+      --ink-soft: #a8adb8;
+      --ink-faint: #6f757f;
+      --accent: #59ff97;
+      --accent-ink: #07130c;
+      --label-a: #59ff97;
+      --label-b: #fe19ff;
+      --label-c: #7d93ff;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0d0e11;
+    --panel: #15171c;
+    --edge: #262a33;
+    --ink: #eceef2;
+    --ink-soft: #a8adb8;
+    --ink-faint: #6f757f;
+    --accent: #59ff97;
+    --accent-ink: #07130c;
+    --label-a: #59ff97;
+    --label-b: #fe19ff;
+    --label-c: #7d93ff;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px 72px; }
+  a { color: inherit; }
+
+  header { padding: 72px 0 8px; }
+  h1 {
+    font-size: clamp(2.1rem, 6vw, 3.1rem);
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .lede { font-size: 1.1rem; color: var(--ink-soft); max-width: 62ch; margin: 0 0 18px; }
+  .lede strong { color: var(--ink); font-weight: 600; }
+  .meta { font-size: 0.9rem; color: var(--ink-faint); display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .meta a { text-decoration-color: var(--edge); text-underline-offset: 3px; }
+
+  .note {
+    margin: 32px 0 8px;
+    padding: 16px 18px;
+    border: 1px solid var(--edge);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--panel);
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .note p { margin: 0 0 8px; }
+  .note p:last-child { margin: 0; }
+
+  h2 {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin: 52px 0 16px;
+  }
+
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    border: 1px solid var(--edge);
+    border-radius: var(--radius);
+    background: var(--panel);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .card h3 { margin: 0; font-size: 1.22rem; letter-spacing: -0.015em; font-weight: 600; }
+  .shows { margin: 0; color: var(--ink-soft); font-size: 0.96rem; }
+  .facts {
+    margin: 0;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 7px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--edge);
+    color: var(--ink);
+    background: transparent;
+    cursor: pointer;
+  }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; font-weight: 600; }
+  .btn:hover { border-color: var(--accent); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .iiif { margin: 0; }
+  .iiif-label { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); display: block; margin-bottom: 5px; }
+  .iiif code {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    word-break: break-all;
+    display: block;
+    padding: 8px 10px;
+    border: 1px solid var(--edge);
+    border-radius: 6px;
+    background: var(--ground);
+  }
+
+  .credit {
+    margin: 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--edge);
+    font-size: 0.84rem;
+    color: var(--ink-faint);
+    line-height: 1.5;
+  }
+  .credit a { color: var(--ink-soft); }
+  .chip {
+    display: inline-block;
+    width: 9px; height: 9px;
+    border-radius: 2px;
+    margin-right: 8px;
+    vertical-align: baseline;
+  }
+  .c-a { background: var(--label-a); }
+  .c-b { background: var(--label-b); }
+  .c-c { background: var(--label-c); }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 26px;
+    border-top: 1px solid var(--edge);
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+  }
+  footer p { max-width: 70ch; }
+  footer a { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>OME-Zarr, served as IIIF</h1>
+  <p class="lede">
+    Four published microscopy images from the <a href="https://idr.openmicroscopy.org/">Image Data
+    Resource</a>, each exported by <strong>ziv</strong> into a static
+    <a href="https://iiif.io/api/image/3.0/">IIIF Image API 3.0</a> Level 0 tile tree. There is no
+    server here: every file a IIIF client will ever request was written ahead of time and is being
+    served by GitHub Pages.
+  </p>
+  <p class="meta">
+    <a href="https://github.com/nishad/ziv">ziv on GitHub</a>
+    <span>Images © their authors, via IDR</span>
+  </p>
+</header>
+
+<div class="note">
+  <p><strong>Each demo is a real IIIF service, not a picture of one.</strong> The
+  <code>info.json</code> below every demo is a live endpoint: paste it into Mirador, the Universal
+  Viewer, or any other IIIF client and the image opens there, with no knowledge of OME-Zarr on the
+  client's part.</p>
+  <p>Each demo also links to the <strong>original OME-Zarr store in vizarr</strong>, so you can
+  compare what a IIIF client sees against the chunked array the data actually lives in.</p>
+</div>
+
+<h2>Demos</h2>
+
+<div class="grid">
+
+  <article class="card">
+    <h3>Nuclear segmentation</h3>
+    <p class="shows">236 z-planes with a segmentation mask on every one. The label picker draws the
+      mask in ziv's deterministic distinct colours, because all 61 colours this image declares are
+      the identical grey: rendering the declared table faithfully collapses nineteen nuclei into one
+      shape.</p>
+    <p class="facts">275 × 271 px · 236 z · 2 channels · 1 label</p>
+    <div class="actions">
+      <a class="btn primary" href="./nuclear-segmentation/">Open demo</a>
+      <a class="btn" href="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0062A/6001240.zarr">Open source in vizarr</a>
+      <a class="btn" href="https://idr.openmicroscopy.org/webclient/?show=image-6001240">IDR page</a>
+    </div>
+    <p class="iiif">
+      <span class="iiif-label">IIIF image service</span>
+      <code>https://nishad.github.io/ziv-demos/nuclear-segmentation/info.json</code>
+    </p>
+    <p class="credit">
+      <span class="chip c-a"></span>IDR image 6001240, study
+      <a href="https://github.com/IDR/idr0062-blin-nuclearsegmentation">idr0062-blin-nuclearsegmentation</a>
+      (<a href="https://doi.org/10.17867/10000125">10.17867/10000125</a>).<br>
+      Blin G, Sadurska D, Portero Migueles R, Chen N, Watson JA, Lowell S. Nessys: A new set of tools
+      for the automated detection of nuclei within intact tissues and dense 3D cultures.
+      <em>PLOS Biology</em> 2019. <a href="https://doi.org/10.1371/journal.pbio.3000388">10.1371/journal.pbio.3000388</a>
+    </p>
+  </article>
+
+  <article class="card">
+    <h3>Whole brain</h3>
+    <p class="shows">255 megapixels in one plane, nine pyramid levels, for deep zoom. Well over the
+      64-megapixel whole-image cap, so the export declares only the whole-image sizes it actually
+      wrote rather than advertising renderings it would refuse to serve.</p>
+    <p class="facts">19 120 × 13 350 px · 9 levels · 3 channels</p>
+    <div class="actions">
+      <a class="btn primary" href="./whole-brain/">Open demo</a>
+      <a class="btn" href="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0048A/9846152.zarr">Open source in vizarr</a>
+      <a class="btn" href="https://idr.openmicroscopy.org/webclient/?show=image-9846152">IDR page</a>
+    </div>
+    <p class="iiif">
+      <span class="iiif-label">IIIF image service</span>
+      <code>https://nishad.github.io/ziv-demos/whole-brain/info.json</code>
+    </p>
+    <p class="credit">
+      <span class="chip c-c"></span>IDR image 9846152, study
+      <a href="https://github.com/IDR/idr0048-abdeladim-chroms">idr0048-abdeladim-chroms</a>.<br>
+      Abdeladim L, Matho KS, Clavreul S, <em>et al.</em> Multicolor multiscale brain imaging with
+      chromatic multiphoton serial microscopy. <em>Nature Communications</em> 2019.
+      <a href="https://doi.org/10.1038/s41467-019-09552-9">10.1038/s41467-019-09552-9</a>
+    </p>
+  </article>
+
+  <article class="card">
+    <h3>In situ genome sequencing</h3>
+    <p class="shows">Its segmentation mask is stored as 64-bit integers, a sample type ziv silently
+      dropped until recently: the image opened, the label did not, and nothing said so. It now
+      renders, and a label that cannot be opened is reported by name.</p>
+    <p class="facts">198 × 223 px · 12 z · 6 channels · 18 timepoints · 1 label</p>
+    <div class="actions">
+      <a class="btn primary" href="./genome-seq/">Open demo</a>
+      <a class="btn" href="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0101A/13457537.zarr">Open source in vizarr</a>
+      <a class="btn" href="https://idr.openmicroscopy.org/webclient/?show=image-13457537">IDR page</a>
+    </div>
+    <p class="iiif">
+      <span class="iiif-label">IIIF image service</span>
+      <code>https://nishad.github.io/ziv-demos/genome-seq/info.json</code>
+    </p>
+    <p class="credit">
+      <span class="chip c-b"></span>IDR image 13457537, study
+      <a href="https://github.com/IDR/idr0101-payne-insitugenomeseq">idr0101-payne-insitugenomeseq</a>.<br>
+      Payne AC, Chiang ZD, Reginato PL, <em>et al.</em> In situ genome sequencing resolves DNA
+      sequence and structure in intact biological samples. <em>Science</em> 2021.
+      <a href="https://doi.org/10.1126/science.aay3446">10.1126/science.aay3446</a>
+    </p>
+  </article>
+
+  <article class="card">
+    <h3>Condensin map</h3>
+    <p class="shows">Declares two separate label images, <code>Cell</code> and
+      <code>Chromosomes</code>, so the picker has a genuine choice rather than a single mask to
+      toggle. Each is its own multiscale image beside the intensity data.</p>
+    <p class="facts">256 × 256 px · 31 z · 3 channels · 40 timepoints · 2 labels</p>
+    <div class="actions">
+      <a class="btn primary" href="./condensin-map/">Open demo</a>
+      <a class="btn" href="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0052A/5514375.zarr">Open source in vizarr</a>
+      <a class="btn" href="https://idr.openmicroscopy.org/webclient/?show=image-5514375">IDR page</a>
+    </div>
+    <p class="iiif">
+      <span class="iiif-label">IIIF image service</span>
+      <code>https://nishad.github.io/ziv-demos/condensin-map/info.json</code>
+    </p>
+    <p class="credit">
+      <span class="chip c-a"></span>IDR image 5514375, study
+      <a href="https://github.com/IDR/idr0052-walther-condensinmap">idr0052-walther-condensinmap</a>.<br>
+      Walther N, Hossain MJ, Politi AZ, <em>et al.</em> A quantitative map of human Condensins
+      provides new insights into mitotic chromosome architecture. <em>Journal of Cell Biology</em>
+      2018. <a href="https://doi.org/10.1083/jcb.201801048">10.1083/jcb.201801048</a>
+    </p>
+  </article>
+
+</div>
+
+<h2>How these were made</h2>
+
+<div class="note">
+  <p>Each demo is one command against the published store, with the URL it will be hosted at baked
+  into every <code>info.json</code>:</p>
+  <p><code style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;">ziv export
+  https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0062A/6001240.zarr ./nuclear-segmentation --id
+  https://nishad.github.io/ziv-demos/nuclear-segmentation --planes --labels</code></p>
+  <p>The exact commands live in <a href="https://github.com/nishad/ziv-demos/blob/main/scripts/build-demos.sh">scripts/build-demos.sh</a>,
+  which regenerates the whole site.</p>
+</div>
+
+<footer>
+  <p>
+    All four images are published in the <a href="https://idr.openmicroscopy.org/">Image Data
+    Resource</a> and remain the work of their authors, credited above with their primary
+    publications. Please cite those papers, and IDR, rather than this site. Image reuse is governed
+    by the terms stated on each study's IDR page.
+  </p>
+  <p>
+    Built with <a href="https://github.com/nishad/ziv">ziv</a>. The viewer bundled into each demo is
+    <a href="https://openseadragon.github.io/">OpenSeadragon</a>. The comparison links open
+    <a href="https://github.com/hms-dbmi/vizarr">vizarr</a>, which reads the original OME-Zarr store
+    directly in the browser.
+  </p>
+</footer>
+
+</div>
+</body>
+</html>
