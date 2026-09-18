@@ -126,6 +126,20 @@
     font-variant-numeric: tabular-nums;
   }
 
+  .thumb {
+    display: block;
+    margin: -22px -22px 4px;
+    height: 240px;
+    background: #000;
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+  }
+  /* scale-down never enlarges: three of these images are under 280 px, and upscaling a microscopy
+     render past its real resolution invents detail it does not have. They sit at native size on
+     black, which is the ground microscopy is shot against anyway. */
+  .thumb img { width: 100%; height: 100%; object-fit: scale-down; display: block; }
+  .thumb:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
   .actions { display: flex; flex-wrap: wrap; gap: 8px; }
   .btn {
     display: inline-block;
@@ -210,7 +224,9 @@
   <p><strong>Each demo is a real IIIF service, not a picture of one.</strong> The
   <code>info.json</code> below every demo is a live endpoint: paste it into Mirador, the Universal
   Viewer, or any other IIIF client and the image opens there, with no knowledge of OME-Zarr on the
-  client's part.</p>
+  client's part. The three demos with more than one plane carry a IIIF Presentation manifest and
+  open directly in <a href="https://projectmirador.org/">Mirador</a> from their card; the whole
+  brain is a single image, so it has an image service but no manifest to open.</p>
   <p>Each demo also links to the <strong>original OME-Zarr store in vizarr</strong>, so you can
   compare what a IIIF client sees against the chunked array the data actually lives in.</p>
 </div>
@@ -220,6 +236,7 @@
 <div class="grid">
 
   <article class="card">
+    <a class="thumb" href="./nuclear-segmentation/" aria-label="Open the nuclear segmentation demo"><img src="./thumbs/nuclear-segmentation.jpg" width="271" height="275" loading="lazy" alt="Nuclei of IDR image 6001240 at plane 118, each segmented nucleus overlaid in its own distinct colour"></a>
     <h3>Nuclear segmentation</h3>
     <p class="shows">236 z-planes with a segmentation mask on every one. The label picker draws the
       mask in ziv's deterministic distinct colours, because all 61 colours this image declares are
@@ -229,6 +246,7 @@
     <div class="actions">
       <a class="btn primary" href="./nuclear-segmentation/">Open demo</a>
       <a class="btn" href="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0062A/6001240.zarr">Open source in vizarr</a>
+      <a class="btn" href="https://projectmirador.org/embed/?iiif-content=https://nishad.github.io/ziv-demos/nuclear-segmentation/manifest.json">Open in Mirador</a>
       <a class="btn" href="https://idr.openmicroscopy.org/webclient/?show=image-6001240">IDR page</a>
     </div>
     <p class="iiif">
@@ -246,6 +264,7 @@
   </article>
 
   <article class="card">
+    <a class="thumb" href="./whole-brain/" aria-label="Open the whole brain demo"><img src="./thumbs/whole-brain.jpg" width="640" height="446" loading="lazy" alt="A coronal section of a whole mouse brain, IDR image 9846152, in three fluorescence channels"></a>
     <h3>Whole brain</h3>
     <p class="shows">255 megapixels in one plane, nine pyramid levels, for deep zoom. Well over the
       64-megapixel whole-image cap, so the export declares only the whole-image sizes it actually
@@ -270,6 +289,7 @@
   </article>
 
   <article class="card">
+    <a class="thumb" href="./genome-seq/" aria-label="Open the in situ genome sequencing demo"><img src="./thumbs/genome-seq.jpg" width="198" height="223" loading="lazy" alt="A single nucleus from IDR image 13457537 at plane 6, with its 64-bit segmentation mask overlaid"></a>
     <h3>In situ genome sequencing</h3>
     <p class="shows">Its segmentation mask is stored as 64-bit integers, a sample type ziv silently
       dropped until recently: the image opened, the label did not, and nothing said so. It now
@@ -278,6 +298,7 @@
     <div class="actions">
       <a class="btn primary" href="./genome-seq/">Open demo</a>
       <a class="btn" href="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0101A/13457537.zarr">Open source in vizarr</a>
+      <a class="btn" href="https://projectmirador.org/embed/?iiif-content=https://nishad.github.io/ziv-demos/genome-seq/manifest.json">Open in Mirador</a>
       <a class="btn" href="https://idr.openmicroscopy.org/webclient/?show=image-13457537">IDR page</a>
     </div>
     <p class="iiif">
@@ -294,6 +315,7 @@
   </article>
 
   <article class="card">
+    <a class="thumb" href="./condensin-map/" aria-label="Open the condensin map demo"><img src="./thumbs/condensin-map.jpg" width="256" height="256" loading="lazy" alt="IDR image 5514375 at plane 15, with the Cell label overlaid on a dividing cell"></a>
     <h3>Condensin map</h3>
     <p class="shows">Declares two separate label images, <code>Cell</code> and
       <code>Chromosomes</code>, so the picker has a genuine choice rather than a single mask to
@@ -302,6 +324,7 @@
     <div class="actions">
       <a class="btn primary" href="./condensin-map/">Open demo</a>
       <a class="btn" href="https://hms-dbmi.github.io/vizarr/?source=https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0052A/5514375.zarr">Open source in vizarr</a>
+      <a class="btn" href="https://projectmirador.org/embed/?iiif-content=https://nishad.github.io/ziv-demos/condensin-map/manifest.json">Open in Mirador</a>
       <a class="btn" href="https://idr.openmicroscopy.org/webclient/?show=image-5514375">IDR page</a>
     </div>
     <p class="iiif">
