@@ -16056,5 +16056,9 @@
         }
       ]
     }
-  ]
+  ],
+  "start": {
+    "id": "https://nishad.github.io/ziv-demos/nuclear-segmentation/canvas/z118",
+    "type": "Canvas"
+  }
 }

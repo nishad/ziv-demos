@@ -2705,5 +2705,9 @@
         }
       ]
     }
-  ]
+  ],
+  "start": {
+    "id": "https://nishad.github.io/ziv-demos/condensin-map/canvas/z15",
+    "type": "Canvas"
+  }
 }
