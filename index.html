@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>ziv demos</title>
 <meta name="description" content="Published OME-Zarr microscopy images served as IIIF Image API 3.0 services, exported as static tile trees by ziv.">
 <!-- Four tiles, in the label palette: a IIIF tile grid over a dark ground. -->
@@ -11,10 +12,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <style>
-  /* The accents are not decorative: #59FF97, #FE19FF and #4661C7 are three of the colours ziv
-     actually assigns to segmentation labels with its distinct palette, sampled from the rendered
-     nuclei in the idr0062 demo below. */
+  /* Always light, whatever the visitor's system setting. The chip colours beside each credit are
+     darkened versions of #59FF97, #FE19FF and #4661C7, three of the colours ziv really assigns to
+     segmentation labels with its distinct palette, darkened so they hold contrast on white. The
+     thumbnails keep a black ground: microscopy is imaged against black. */
   :root {
+    color-scheme: light;
     --ground: #fbfbfa;
     --panel: #ffffff;
     --edge: #e3e3df;
@@ -27,34 +30,6 @@
     --label-b: #a3179f;
     --label-c: #3550a8;
     --radius: 10px;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --ground: #0d0e11;
-      --panel: #15171c;
-      --edge: #262a33;
-      --ink: #eceef2;
-      --ink-soft: #a8adb8;
-      --ink-faint: #6f757f;
-      --accent: #59ff97;
-      --accent-ink: #07130c;
-      --label-a: #59ff97;
-      --label-b: #fe19ff;
-      --label-c: #7d93ff;
-    }
-  }
-  :root[data-theme="dark"] {
-    --ground: #0d0e11;
-    --panel: #15171c;
-    --edge: #262a33;
-    --ink: #eceef2;
-    --ink-soft: #a8adb8;
-    --ink-faint: #6f757f;
-    --accent: #59ff97;
-    --accent-ink: #07130c;
-    --label-a: #59ff97;
-    --label-b: #fe19ff;
-    --label-c: #7d93ff;
   }
 
   * { box-sizing: border-box; }
